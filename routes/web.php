@@ -15,15 +15,14 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+    return view('pages.home');
 });
 
-Auth::routes();
+Route::get('/profile', function() {
+    return view('pages.profile');
+});
 
-Route::get('/home', [
-    HomeController::class, 'index'
-])->name('home');
-
-
-Route::resource('mPLteams', App\Http\Controllers\MPLteamsController::class);
+Route::get('/about', function() {
+    return view('pages.about');
+});
